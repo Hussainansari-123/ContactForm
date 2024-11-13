@@ -1,0 +1,160 @@
+/* Background styling */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #6a5acd, #e0e0e0);
+  font-family: Arial, sans-serif;
+  padding: 1rem; /* Adds padding for smaller screens */
+  box-sizing: border-box;
+}
+
+/* Form container styling */
+.container {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+ 
+  box-shadow: 2px 15px 25px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+/* Centers text and button inside container */
+}
+
+/* Heading styling */
+.container h1 {
+  color:white;
+  font-size: 2rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+.container label{
+  text-align: left;
+}
+
+/* Error message styling */
+/* Adjust label and error message styling */
+.container label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem; /* Adjust spacing here as needed */
+  font-weight: bold;
+}
+.confirmation-message {
+  position: absolute; /* Take it out of the document flow */
+  top: 9%; /* Vertically center it within the container */
+  left: 50%; /* Horizontally center it */
+  transform: translate(-50%, -50%); /* Adjust for perfect centering */
+  padding: 10px;
+  background-color: #f0f8ff;
+  color: #007bff;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  z-index: 100; /* Ensure it appears above other content */
+  display: none; /* Hide by default */
+  max-width: 80%; /* Limit the width to 80% of the container */
+  width: auto; /* Allow it to resize automatically based on content */
+}
+
+.confirmation-message.show {
+  display: block; /* Show the message when triggered */
+}
+
+.confirmation-message.show {
+  display: block; /* Show the message when triggered */
+}
+
+
+.error-message {
+  color: red;
+}
+
+.container .error-message {
+  color: red;
+  font-size: 0.9rem;
+}
+.error-message::before{
+  content: '*';
+  color: red;
+}
+
+/* Input fields styling */
+.container input[type="text"],
+.container input[type="email"],
+.container textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  outline: none;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.container input[type="text"]:focus,
+.container input[type="email"]:focus,
+.container textarea:focus {
+  border-color: #60a3d9;
+}
+
+/* Textarea styling */
+.container textarea {
+  border-radius: 15px;
+  resize: none;
+  height: 100px;
+}
+
+/* Submit button styling */
+.container button {
+
+ 
+  padding: 0.75rem 2rem;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  margin-top: 1rem; /* Adds space above the button */
+  display: inline-block; /* Centers button within the container */
+}
+
+.container button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments for tablets and smaller screens */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .container h1 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .container h1 {
+    font-size: 1.5rem;
+  }
+
+  .container button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+  }
+}
